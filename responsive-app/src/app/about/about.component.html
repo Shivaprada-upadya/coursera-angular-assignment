@@ -1,1 +1,10 @@
-<p>about works!</p>
+<div>
+  <h2>About Us</h2>
+  <p *ngIf="showDetails">We are a leading company in web development.</p>
+  <button (click)="toggleDetails()">{{ showDetails ? 'Hide' : 'Show' }} Details</button>
+
+  <h3>Our Services:</h3>
+  <ul>
+    <li *ngFor="let service of services">{{ service }}</li>
+  </ul>
+</div>

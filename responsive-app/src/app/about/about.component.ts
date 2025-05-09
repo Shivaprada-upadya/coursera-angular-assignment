@@ -2,10 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about',
-  imports: [],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+  styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
+  showDetails: boolean = false;
+  services: string[] = ['Web Development', 'App Development', 'SEO Optimization'];
 
+  toggleDetails() {
+    this.showDetails = !this.showDetails;
+  }
 }

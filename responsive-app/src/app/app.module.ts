@@ -1,24 +1,26 @@
-// Example: src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';  // ✅ Import FormsModule
+
 import { AppComponent } from './app.component';
-// Assuming HeaderModule and FooterModule declare/export HeaderComponent and FooterComponent
-import { HeaderModule } from './header/header.module';
-import { FooterModule } from './footer/footer.module';
-// OR if they are in a shared module
-// import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    HeaderModule, // <-- Add this
-    FooterModule, // <-- Add this
-    // OR SharedModule <-- Add this
+    AppRoutingModule,
+    FormsModule  // ✅ Add to imports
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
